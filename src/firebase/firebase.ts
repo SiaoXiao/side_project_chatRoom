@@ -12,14 +12,15 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider
 const COLLECTIONS = {
   ROOM: "room",
   MESSAGE: "message"
 }
+
 export function requireAuth() {
-  return new Promise((resolve, reject)=> {
+  return new Promise((resolve)=> {
     const auth = getAuth()
     const unsubscribe = onAuthStateChanged(auth, (user)=> {
       if(user) {

@@ -4,7 +4,7 @@ import { useRouter } from "vue-router";
 const router = useRouter();
 
 const handleCreateRoom = () => {
-  requireAuth().then(async (user) => {
+  requireAuth().then(async () => {
     const roomId = await createRoom();
     router.push({ path: "/chat-room", query: { roomId } });
   });
