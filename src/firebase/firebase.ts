@@ -13,6 +13,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
+console.log('firebaseConfig', firebaseConfig);
+
 const provider = new GoogleAuthProvider
 const COLLECTIONS = {
   ROOM: "room",

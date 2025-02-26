@@ -63,9 +63,7 @@ const loadRoomName = async (roomId: string) => {
 };
 
 onMounted(() => {
-  requireAuth().then((user) => {
-    console.log(user);
-
+  requireAuth().then(() => {
     loadRoomName(roomId.value);
     subscribeToRoom(handleUpdateMessage, roomId.value);
   });
