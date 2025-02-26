@@ -25,6 +25,9 @@ export function requireAuth() {
   return new Promise((resolve)=> {
     const auth = getAuth()
     const unsubscribe = onAuthStateChanged(auth, (user)=> {
+      console.log('auth', auth);
+      console.log('user', user);
+
       if(user) {
         // 已經登入
         resolve(user)
